@@ -15,8 +15,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": ["src", "index.d.ts"],
-  "types": ["@types/google.maps"]
+  "types": ["@types/google.maps"],
+  "exclude": ["node_modules"]
 }
