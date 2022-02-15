@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 
 import { Loader } from '@googlemaps/js-api-loader';
-
+import { Map } from './components/Map';
+import { AppProps } from './common/types/types';
 const loader = new Loader({
   apiKey: '',
   version: 'weekly',
@@ -28,12 +29,7 @@ loader
     console.log(e);
   });
 
-function App() {
-  return (
-    <div className="App">
-      <div id="map" className="map"></div>
-    </div>
-  );
-}
-
-export default App;
+export const App: React.FC<AppProps> = (props) => {
+  const { customHeight } = props;
+  return <Map customHeight={customHeight}>map goes here</Map>;
+};
